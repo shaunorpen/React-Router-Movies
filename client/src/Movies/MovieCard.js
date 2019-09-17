@@ -5,6 +5,12 @@ const MovieCard = props => {
 
   const { id, title, director, metascore, stars } = props.movie;
 
+  // Uncomment this only when you have moved on to the stretch goals
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(props.movie)
+  }
+
   return (
     <div className="save-wrapper">
       <div className="movie-card">
@@ -25,7 +31,7 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={e => saveMovie()}>Save</div>
     </div>
   );
 };
