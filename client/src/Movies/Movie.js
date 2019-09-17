@@ -17,13 +17,12 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[movie]);
+  },[props.match.params.id]);
 
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
 
-  const { title, director, metascore, stars } = movie;
   return (
     <MovieCard {...props} key={movie.id} movie={movie} />
   );
